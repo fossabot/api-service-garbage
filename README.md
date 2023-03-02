@@ -11,10 +11,6 @@ Tillhandahåller information om när sophämtning sker på en viss adress eller 
 
 Konfiguration sker i filen `src/main/resources/application.properties` genom att sätta nedanstående properties till önskade värden:
 
-
-|`spring.datasource.url`|
-|`spring.datasource.username`|
-|`spring.datasource.password`|
 |Property|Beskrivning|
 |---|---|
 |`spring.datasource.url`| URL till databasen
