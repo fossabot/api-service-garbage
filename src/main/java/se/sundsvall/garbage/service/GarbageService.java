@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import se.sundsvall.garbage.api.model.GarbageScheduleRequest;
 import se.sundsvall.garbage.api.model.GarbageScheduleResponse;
@@ -37,9 +37,11 @@ public class GarbageService {
             .toList();
     }
     
-    public void updateGarbageSchedules(MultipartFile file) {
+    @Scheduled(cron = "0 5 * * MON-FRI")
+    public void updateGarbageSchedules() {
+        fileHandler.downloadFile();
         repository.deleteAllInBatch();
-        repository.saveAll(fileHandler.parseFile(file));
+        repository.saveAll(fileHandler.parseFile());
         
     }
     

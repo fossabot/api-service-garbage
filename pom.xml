@@ -54,6 +54,11 @@
             <artifactId>jackson-dataformat-csv</artifactId>
             <version>2.14.2</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-vfs2</artifactId>
+            <version>2.4</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -62,6 +67,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <configuration>
                     <excludes>
+                        <exclude>**/se/sundsvall/garbage/integration/**/**Properties**</exclude>
                         <exclude>**/se/sundsvall/garbage/GarbageApplication*</exclude>
                         <exclude>
                             **/se/sundsvall/garbage/integration/db/entity/GarbageScheduleEntity_**
