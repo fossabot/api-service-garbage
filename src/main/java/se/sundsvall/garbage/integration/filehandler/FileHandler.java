@@ -2,6 +2,7 @@ package se.sundsvall.garbage.integration.filehandler;
 
 import java.io.File;
 import java.io.FileReader;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.MappingIterator;
@@ -55,7 +56,7 @@ public class FileHandler {
         try (MappingIterator<ParsedRow> it =
                  csvMapper.readerFor(ParsedRow.class)
                      .with(schema)
-                     .readValues(new FileReader(TEMP_FILE))) {
+                     .readValues(new FileReader(TEMP_FILE, StandardCharsets.ISO_8859_1))) {
             var result = it.readAll().stream()
                 .filter(parsedRow -> !parsedRow.getDriveSchedule().startsWith("SL"))
                 .map(this::mapToEntity)
