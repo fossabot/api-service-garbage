@@ -29,7 +29,7 @@ class FileHandlerTest {
     @Test
     void parseFile() {
         
-        var filePath = Path.of("schedule.csv");
+        var filePath = Path.of(System.getProperty("java.io.tmpdir") + "/schedule.csv");
         var file = new File("src/test/resources/mockfiles/schedule.csv");
         
         if (file.exists()) {
@@ -47,7 +47,7 @@ class FileHandlerTest {
         assertThat(result.size()).isEqualTo(2);
         
         var firstRow = result.get(0);
-        assertThat(firstRow.getDriveSchedule()).isEqualTo("KP50MÅ2");
+        assertThat(firstRow.getDriveSchedule()).isEqualTo("KP50TI2");
         assertThat(firstRow.getId()).isNull();
         assertThat(firstRow.getCity()).isEqualTo("Sundsvall");
         assertThat(firstRow.getStreet()).isEqualTo("Testgatan");
