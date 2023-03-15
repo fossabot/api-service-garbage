@@ -79,11 +79,11 @@ class GarbageServiceTest {
     
     @Test
     void updateGarbageSchedules() {
-        MultipartFile multipartFile = new MockMultipartFile("sourceFile.csv", "Hello World" .getBytes());
         
-        service.updateGarbageSchedules(multipartFile);
+        service.updateGarbageSchedules();
         
-        verify(fileHandler, times(1)).parseFile(any());
+        verify(fileHandler, times(1)).downloadFile();
+        verify(fileHandler, times(1)).parseFile();
         verify(repository, times(1)).deleteAllInBatch();
         verify(repository, times(1)).saveAll(any());
         verifyNoMoreInteractions(fileHandler);

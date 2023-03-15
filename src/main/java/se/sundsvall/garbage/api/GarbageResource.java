@@ -45,14 +45,4 @@ public class GarbageResource {
     public ResponseEntity<List<GarbageScheduleResponse>> getGarbage(@ParameterObject @Valid GarbageScheduleRequest request) {
         return ResponseEntity.ok(garbageService.getGarbageSchedules(request));
     }
-    
-    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    @Operation(summary = "Populate the garbage schedule database. Temporary endpoint. Probably.")
-    @ApiResponse(responseCode = "200", description = "Successful Operation", content = @Content(schema = @Schema()))
-    public ResponseEntity<Void> updateGarbageScheduleDb(@RequestParam("file") MultipartFile file) {
-        garbageService.updateGarbageSchedules(file);
-        return ResponseEntity.ok().build();
-        
-        
-    }
 }
