@@ -22,7 +22,7 @@ import se.sundsvall.garbage.integration.db.entity.GarbageScheduleEntity;
 @EnableConfigurationProperties(SftpProperties.class)
 public class FileHandler {
     
-    private final static String TEMP_FILE = System.getProperty("user.dir") + "/schedule.csv";
+    private final static String TEMP_FILE = System.getProperty("java.io.tmpdir") + "/schedule.csv";
     private static final Logger log = LoggerFactory.getLogger(FileHandler.class);
     private final SftpProperties sftpProperties;
     
@@ -34,10 +34,11 @@ public class FileHandler {
         try {
             var manager = VFS.getManager();
             var local = manager.resolveFile(TEMP_FILE);
-            var remote = manager.resolveFile("sftp://" + sftpProperties.getUsername()
-                                             + ":" + sftpProperties.getPassword()
-                                             + "@" + sftpProperties.getRemoteHost()
-                                             + "/" + sftpProperties.getFilename());
+            var remote = manager.resolveFile(String.format("sftp://%s:%s@%s/%s",
+                sftpProperties.getUsername(),
+                sftpProperties.getPassword(),
+                sftpProperties.getRemoteHost(),
+                sftpProperties.getFilename()));
             local.copyFrom(remote, Selectors.SELECT_SELF);
             local.close();
             remote.close();
