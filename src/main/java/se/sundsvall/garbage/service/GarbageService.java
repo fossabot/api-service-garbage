@@ -39,7 +39,7 @@ public class GarbageService {
             .toList();
     }
     
-    @Scheduled(cron = "0 5 * * * MON-FRI")
+    @Scheduled(cron = "0 0 5 * * MON-FRI")
     public void updateGarbageSchedules() {
         fileHandler.downloadFile();
         repository.deleteAllInBatch();
