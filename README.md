@@ -45,5 +45,14 @@ Starta en Docker-container:
 docker run -i --rm -p 8080:8080 evil.sundsvall.se/ms-garbage:latest
 ```
 
+## Status
 
-Copyright &copy; 2022 Sundsvalls Kommun
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=alert_status)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=security_rating)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=bugs)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
+
+## 
+Copyright (c) 2021 Sundsvalls kommun
