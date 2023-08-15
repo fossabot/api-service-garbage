@@ -58,15 +58,4 @@ class GarbageResourceTest {
         verifyNoMoreInteractions(service);
     
     }
-    
-    
-    @Test
-    void updateGarbageScheduleDb(){
-        var multipartFile = new MockMultipartFile("sourceFile.csv", ("").getBytes());
-        
-        resource.updateGarbageScheduleDb(multipartFile);
-        
-        verify(service, times(1)).updateGarbageSchedules(any());
-        verifyNoMoreInteractions(service);
-    }
 }

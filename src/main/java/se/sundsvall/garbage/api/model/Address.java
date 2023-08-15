@@ -1,10 +1,9 @@
 package se.sundsvall.garbage.api.model;
 
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,6 +25,6 @@ public class Address {
     @NotNull
     @Schema(description = "Zipcode", example = "85731")
     private String postalCode;
-    @Schema(description = "City",nullable = true, example = "Sundsvall")
+    @Schema(description = "City", nullable = true, example = "Sundsvall")
     private String city;
 }
