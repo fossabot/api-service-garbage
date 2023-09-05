@@ -16,7 +16,6 @@
     <properties>
         <docker.image.name>ms-garbage</docker.image.name>
         <exposed.app.port>8080</exposed.app.port>
-        <published.container.port.sandbox>9078</published.container.port.sandbox>
         <published.container.port.test>9078</published.container.port.test>
         <published.container.port.production>9078</published.container.port.production>
     </properties>
