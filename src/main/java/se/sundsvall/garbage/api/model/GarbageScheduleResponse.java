@@ -31,7 +31,7 @@ public class GarbageScheduleResponse {
     @Getter
     @AllArgsConstructor
     public enum WeekDay {
-        MONDAY("MO"),
+        MONDAY("MÅ"),
         TUESDAY("TI"),
         WEDNESDAY("ON"),
         THURSDAY("TO"),
