@@ -8,7 +8,6 @@
         <artifactId>dept44-service-parent</artifactId>
         <version>3.0</version>
     </parent>
-
     <groupId>se.sundsvall</groupId>
     <artifactId>api-service-garbage</artifactId>
     <version>1.0</version>
@@ -30,11 +29,11 @@
             <groupId>se.sundsvall.dept44</groupId>
             <artifactId>dept44-common-validators</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-jpamodelgen</artifactId>
-            <version>6.2.1.Final</version>
-        </dependency>
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
         <!-- Database-->
         <dependency>
@@ -54,12 +53,10 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.15.2</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-csv</artifactId>
-            <version>2.15.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -90,7 +87,25 @@
                     </excludes>
                 </configuration>
             </plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>${build-helper-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>add-generated-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/annotations</source> <!-- JPAModelGen classes -->
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
-
 </project>
