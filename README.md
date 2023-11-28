@@ -53,6 +53,11 @@ docker run -i --rm -p 8080:8080 evil.sundsvall.se/ms-garbage:latest
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=vulnerabilities)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Sundsvallskommun_api-service-garbage&metric=bugs)](https://sonarcloud.io/summary/overall?id=Sundsvallskommun_api-service-garbage)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSundsvallskommun%2Fapi-service-garbage.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FSundsvallskommun%2Fapi-service-garbage?ref=badge_shield)
 
 ## 
 Copyright (c) 2021 Sundsvalls kommun
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSundsvallskommun%2Fapi-service-garbage.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FSundsvallskommun%2Fapi-service-garbage?ref=badge_large)
